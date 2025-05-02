@@ -10,19 +10,7 @@ from modules.model_utils import setup_models, generate_description, clean_memory
 from modules.image_utils import generate_image, save_image
 
 def process_batch(batch_df, images_dir, output_dir, processor, blip_model, pipe, prompt_type, use_layout):
-    """
-    處理一個批次的圖像
     
-    Args:
-        batch_df: 批次數據DataFrame
-        images_dir: 輸入圖像目錄
-        output_dir: 輸出圖像目錄
-        processor: BLIP處理器
-        blip_model: BLIP模型
-        pipe: 擴散模型管道
-        prompt_type: 提示詞類型
-        use_layout: 是否使用佈局信息
-    """
     for _, row in batch_df.iterrows():
         image_path = os.path.join(images_dir, row['image_filename'])
         try:
@@ -69,16 +57,7 @@ def process_batch(batch_df, images_dir, output_dir, processor, blip_model, pipe,
             print(f"處理 {image_path} 時發生錯誤: {str(e)}")
 
 def run_generation(mode, images_dir, json_path, output_dir=None, batch_size=None):
-    """
-    運行圖像生成
     
-    Args:
-        mode: 生成模式 (從MODES中選擇)
-        images_dir: 輸入圖像目錄
-        json_path: 標籤文件路徑
-        output_dir: 自訂輸出目錄 (可選)
-        batch_size: 自訂批次大小 (可選)
-    """
     if mode not in MODES:
         raise ValueError(f"不支援的模式: {mode}。支援的模式有: {', '.join(MODES.keys())}")
     
