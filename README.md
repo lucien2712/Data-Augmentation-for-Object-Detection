@@ -1,16 +1,6 @@
 # CVPDL HW 3: Data Augmentation
 
-## 環境準備
-1. 安裝必要的 Python 套件：
-   ```bash
-   pip install transformers diffusers pillow torch pandas
-   ```
-
-2. 確認環境支持 CUDA。
-
-## 模組化架構
-
-本專案採用模組化架構，便於維護和擴展：
+## 架構
 
 ```
 Codes for inference/
@@ -24,10 +14,6 @@ Codes for inference/
 ```
 
 ## 程式運行
-
-### 使用統一入口點運行
-
-新架構提供了統一的命令行入口點，可以通過指定不同的模式來運行不同的圖像生成任務：
 
 ```bash
 python Codes\ for\ inference/run_generation.py <模式> [選項]
@@ -89,15 +75,3 @@ python Codes\ for\ inference/run_generation.py <模式> [選項]
     ./no_layout_prompt2_model2/   # 運行 no_layout_prompt2_model2 模式
     ./prompt2_model2_with_layout/ # 運行 prompt2_model2_with_layout 模式
     ```
-
-## 模組化設計說明
-
-1. **config.py**: 集中管理所有配置參數，包括模型設定、提示詞模板和輸出目錄等。
-
-2. **data_utils.py**: 處理數據載入、預處理和批次處理相關功能。
-
-3. **model_utils.py**: 提供模型載入、設定和推論相關功能。
-
-4. **image_utils.py**: 提供圖像生成和處理相關功能。
-
-5. **run_generation.py**: 主程式入口點，支持命令行參數，靈活選擇不同的生成模式。
