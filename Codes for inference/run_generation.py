@@ -1,7 +1,3 @@
-"""
-主程式 - 圖像生成模型執行入口點
-"""
-
 import os
 import argparse
 from modules.config import BATCH_SIZE, MODES

@@ -1,7 +1,3 @@
-"""
-模型工具模組 - 提供模型載入、設定和推論相關功能
-"""
-
 import torch
 import gc
 from transformers import Blip2Processor, Blip2ForConditionalGeneration

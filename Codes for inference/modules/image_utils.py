@@ -14,7 +14,7 @@ def generate_image(pipe, prompt, use_layout=False, boxes=None, phrases=None):
     if use_layout:
         # 使用GLIGEN生成帶佈局的圖像
         if boxes is None or phrases is None:
-            raise ValueError("使用佈局時必須提供boxes和phrases參數")
+            raise ValueError("使用 GLIGEN 時必須提供 boxes 和 phrases 參數")
         
         images = pipe(
             prompt=enhanced_prompt,
@@ -44,6 +44,6 @@ def generate_image(pipe, prompt, use_layout=False, boxes=None, phrases=None):
 
 def save_image(image, output_path):
    
-    # 確保輸出目錄存在
+  
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     image.save(output_path) 

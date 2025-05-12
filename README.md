@@ -4,13 +4,13 @@
 
 ```
 Codes for inference/
-├── modules/                  # 模組目錄
-│   ├── __init__.py           # 模組初始化文件
-│   ├── config.py             # 配置參數
-│   ├── data_utils.py         # 數據處理相關函數
-│   ├── model_utils.py        # 模型載入和設定相關函數
-│   └── image_utils.py        # 圖像生成和處理相關函數
-├── run_generation.py         # 主程式入口點
+├── modules/                  
+│   ├── __init__.py           
+│   ├── config.py             
+│   ├── data_utils.py        
+│   ├── model_utils.py        
+│   └── image_utils.py       
+├── run_generation.py         
 ```
 
 ## 程式運行
